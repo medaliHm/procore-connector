@@ -29,8 +29,10 @@ public class SyncService {
 
 	public void processEvent(Event body) throws IOException {
 		try {
+			System.err.println(body.getResource_name());
 			if (body.getResource_name().contains("Files")) {
 				Files webhookFile = procoreService.getFilesById(body.getResource_id() + "", body.getProject_id() + "");
+				System.err.println(webhookFile.getName());
 				String filePath = webhookFile.getName_with_path();
 				if (body.getEvent_type().equals("create") || body.getEvent_type().equals("update")) {
 					if (fileRepository.findById(webhookFile.getId()).isPresent()) {
@@ -42,6 +44,8 @@ public class SyncService {
 								shareDrive + "/" + filePath);
 
 					} else {
+						System.err.println(shareDrive);
+						System.err.println(webhookFile.getFile_versions().get(0).getUrl());
 						java.nio.file.Files
 								.createDirectories(new File(shareDrive + "/" + webhookFile.getName_with_path()
 										.replace(webhookFile.getName(), "")).toPath());
