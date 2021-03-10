@@ -35,7 +35,8 @@ public class TestController {
 	
 	@PostMapping("/try")
 	public ResponseEntity<String> test(@RequestBody Object body) throws IOException {
-		File f = new File(shareDrive);
+		File f = new File(shareDrive+"/test");
+f.createNewFile();
 		System.err.println(f.exists());
 		System.out.println(body.toString());
 		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
