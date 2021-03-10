@@ -1,8 +1,10 @@
 package com.procore.connector.models.webhook;
 
+import java.math.BigInteger;
+
 public class Event {
 
-	    private int user_id;
+	    private BigInteger user_id;
 
 	    private String ulid;
 
@@ -10,24 +12,24 @@ public class Event {
 
 	    private String resource_name;
 
-	    private int resource_id;
+	    private BigInteger resource_id;
 
-	    private int project_id;
+	    private BigInteger project_id;
 
 	    private Metadata metadata;
 
-	    private int id;
+	    private BigInteger id;
 
 	    private String event_type;
 
-	    private int company_id;
+	    private BigInteger company_id;
 
 	    private String api_version;
 
-	    public void setUser_id(int user_id){
+	    public void setUser_id(BigInteger user_id){
 	        this.user_id = user_id;
 	    }
-	    public int getUser_id(){
+	    public BigInteger getUser_id(){
 	        return this.user_id;
 	    }
 	    public void setUlid(String ulid){
@@ -48,16 +50,16 @@ public class Event {
 	    public String getResource_name(){
 	        return this.resource_name;
 	    }
-	    public void setResource_id(int resource_id){
+	    public void setResource_id(BigInteger resource_id){
 	        this.resource_id = resource_id;
 	    }
-	    public int getResource_id(){
+	    public BigInteger getResource_id(){
 	        return this.resource_id;
 	    }
-	    public void setProject_id(int project_id){
+	    public void setProject_id(BigInteger project_id){
 	        this.project_id = project_id;
 	    }
-	    public int getProject_id(){
+	    public BigInteger getProject_id(){
 	        return this.project_id;
 	    }
 	    public void setMetadata(Metadata metadata){
@@ -66,10 +68,10 @@ public class Event {
 	    public Metadata getMetadata(){
 	        return this.metadata;
 	    }
-	    public void setId(int id){
+	    public void setId(BigInteger id){
 	        this.id = id;
 	    }
-	    public int getId(){
+	    public BigInteger getId(){
 	        return this.id;
 	    }
 	    public void setEvent_type(String event_type){
@@ -78,10 +80,10 @@ public class Event {
 	    public String getEvent_type(){
 	        return this.event_type;
 	    }
-	    public void setCompany_id(int company_id){
+	    public void setCompany_id(BigInteger company_id){
 	        this.company_id = company_id;
 	    }
-	    public int getCompany_id(){
+	    public BigInteger getCompany_id(){
 	        return this.company_id;
 	    }
 	    public void setApi_version(String api_version){
