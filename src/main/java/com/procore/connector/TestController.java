@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.procore.connector.models.webhook.Event;
 import com.procore.connector.service.SyncService;
 
@@ -22,7 +23,8 @@ public class TestController {
 
 	@PostMapping("/hooks")
 	public ResponseEntity<String> tryIt(@RequestBody Event body) throws IOException {
-		System.err.println(body.toString());
+		ObjectMapper mapper = new ObjectMapper();
+		System.err.println(mapper.writeValueAsString(body));
 		serviceSync.processEvent(body);
 		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
 
