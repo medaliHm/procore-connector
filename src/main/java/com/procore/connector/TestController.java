@@ -1,8 +1,10 @@
 package com.procore.connector;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,7 +22,8 @@ public class TestController {
 
 	@Autowired
 	SyncService serviceSync;
-
+	@Value("${shared.drive}")
+	private String shareDrive;
 	@PostMapping("/hooks")
 	public ResponseEntity<String> tryIt(@RequestBody Event body) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
@@ -32,6 +35,8 @@ public class TestController {
 	
 	@PostMapping("/try")
 	public ResponseEntity<String> test(@RequestBody Object body) throws IOException {
+		File f = new File(shareDrive);
+		System.err.println(f.exists());
 		System.out.println(body.toString());
 		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
 
