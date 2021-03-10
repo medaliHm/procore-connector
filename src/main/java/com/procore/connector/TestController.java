@@ -20,7 +20,7 @@ public class TestController {
 	@Autowired
 	SyncService serviceSync;
 
-	@PostMapping("/webhook")
+	@PostMapping("/hooks")
 	public ResponseEntity<String> tryIt(@RequestBody Event body) throws IOException {
 		System.out.println(body.toString());
 		serviceSync.processEvent(body);
