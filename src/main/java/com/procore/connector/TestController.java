@@ -39,7 +39,7 @@ public class TestController {
 	public  void runPower() throws IOException {
 		
 		 ProcessBuilder builder = new ProcessBuilder(
-		            "cmd.exe", "/c", "cmdkey /add:csb100320011d345519.file.core.windows.net /user:Azure\\\\csb100320011d345519 /pass:TsVDIQkkGAPxH0e0wdEQx8OSu3TWv56xvJwLX8F/2RuvO2F/JDnnL9XnA36GLD9PzKZ3zgMXWDTQUXwztkgUtQ==",
+		            "cmd.exe", "cmdkey", "/add:csb100320011d345519.file.core.windows.net /user:Azure\\\\csb100320011d345519 /pass:TsVDIQkkGAPxH0e0wdEQx8OSu3TWv56xvJwLX8F/2RuvO2F/JDnnL9XnA36GLD9PzKZ3zgMXWDTQUXwztkgUtQ==",
 		            "net use Z: \\\\csb100320011d345519.file.core.windows.net\\share-procore /persistent:Yes\r\n");
 		        builder.redirectErrorStream(true);
 		        Process p = builder.start();
