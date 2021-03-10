@@ -22,6 +22,7 @@ public class TestController {
 
 	@PostMapping("/webhook")
 	public ResponseEntity<String> tryIt(@RequestBody Event body) throws IOException {
+		System.out.println(body.toString());
 		serviceSync.processEvent(body);
 		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
 
