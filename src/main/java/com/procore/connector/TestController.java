@@ -27,4 +27,17 @@ public class TestController {
 		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
 
 	}
+	
+	@PostMapping("/try")
+	public ResponseEntity<String> test(@RequestBody Object body) throws IOException {
+		System.out.println(body.toString());
+		return new ResponseEntity<String>(body.toString(), HttpStatus.OK);
+
+	}
+	@PostMapping("/tryit")
+	public ResponseEntity<String> test2() throws IOException {
+		System.out.println("test");
+		return new ResponseEntity<String>("test", HttpStatus.OK);
+
+	}
 }
