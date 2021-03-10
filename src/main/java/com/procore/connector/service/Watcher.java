@@ -5,7 +5,6 @@ import java.io.File;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -14,9 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Watcher {
 
-	@Value("${shared.url}")
-	private String sharedFolder;
-	
+
 	@Autowired
 	FileAlterationListenerImpl watcherOtherService;
 
