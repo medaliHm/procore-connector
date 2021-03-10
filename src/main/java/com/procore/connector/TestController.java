@@ -22,6 +22,7 @@ public class TestController {
     	ObjectMapper mapper = new ObjectMapper();
     	
 			String json = mapper.writeValueAsString(body);
+			System.out.println(json);
 	    	return new ResponseEntity<String> (json,HttpStatus.OK);
 
 		} catch (JsonProcessingException e) {
